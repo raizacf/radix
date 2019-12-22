@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'news/new'
+
   get 'sessions/new'
 
   get 'users/new'
@@ -8,9 +10,10 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
 
-  get  '/signup',  to: 'users#new'
+  get  '/new_user', to: 'users#new'
+  get  '/users', to: 'users#index'
   root 'static_pages#home'
-  post '/signup',  to: 'users#create'
+  post '/new_user',  to: 'users#create'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'

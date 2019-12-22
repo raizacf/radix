@@ -1,0 +1,12 @@
+<% provide(:title, 'All News') %>
+
+<h1>Últimas noticias </h1>
+
+<ul class="news">
+  <% @news.each do |news| %>
+    <li>
+      <%= link_to news.name, news %>
+    </li>
+  <% end %>
+
+</ul>
